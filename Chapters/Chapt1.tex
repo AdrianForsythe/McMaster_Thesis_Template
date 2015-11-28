@@ -1,0 +1,62 @@
+% Example chapter, could be introduction
+% should have another with a supplement
+
+\chapter{Introduction} % Main chapter title
+
+\label{Introduction} %for referencing this chapter elsewhere, use \ref{Introduction}
+
+\section{Introduction}
+Here is where you can put a general introduction to your thesis. Just start typing away! You wont be able to render each of your chapters, as they are missing the preamble (the bit before the \verb+\begin{document}+). Using Overleaf makes this simple, locally (i.e. your computer) it will only be a bit more tricky. 
+
+One of my favorite features of \LaTeX is the ability to put comments in your document, that are not rendered into the PDF. I leave little notes to myself all the time. You will have noticed many of these already in the document. Anything that is prefixed with a \% sign will be ignored when creating a PDF. The \% sign is a special character in \LaTeX (there are others too), so to print it you have to ``escape it'' as such: \verb+\%+.
+
+Quotes too a slightly different. Use the backtick (near your escape key) for the start and an apostrophe for the end of the quote. \verb+``''+. 
+
+\section{Citations}
+When you need to cite a paper, it is simple. For a regular citation \citep{Furmanet2015}. Overleaf will even give you a drop down of possible references (at least for the first in a list and the citep and citet commands. 
+
+Other citation styles are called in a similar manner.
+\begin{verbatim}
+\citep{} = (Furman et al. 2015)
+\citet{} = Furman et al. (2015)
+\citealt{} = Furman et al. 2015
+\citealp{} = Furman et al., 2015
+\end{verbatim}
+
+Citations themselves are held in the .bib file. The first line defines the key, which is used to call the citation in the text (such as ``Furmanet2015''). You can change the key to whatever. 
+
+\clearpage % don't usually use something like this, I am just using it for demonstration purposes
+
+One nice feature is creating short names for species, or in general defining acronyms. At the preamble of the main text, you can define acronyms. They would look something like:
+\begin{verbatim}
+\acrodef{est}[EST]{expressed sequence tags}
+\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
+\end{verbatim}
+
+These could allow me to write \ac{est} and \ac{Xl}, which wil pring the full name the first time, then the short form all other times. So we can call them again \ac{est} and \ac{Xl}. We can even pluralize them \acp{est}, if necessary. 
+
+Another option is to define a custom command, say for a name that does not change. This is set at 
+\begin{verbatim}
+\newcommand{\oddname}{{\sc SoME goOfY LonG ThiNg With an AwkWarD 
+                                                NAme}\xspace}
+\end{verbatim}
+
+Then called however you set it: \oddname.
+
+\section{Handling a supplement}
+
+You could drop supplemental sections directly in this chapter \TeX file. There are fancy ways to have it as a separate \TeX file, but that can get complicated with a book style document. 
+
+Alternatively, you could put it as an Appendix at the end of your thesis. 
+
+We can then reference the Figure in the supplement (Fig.\,\ref{Another_tree}; see Chapter \ref{nextChapt} for handling figures). 
+
+
+
+
+
+
+
+
+
+
