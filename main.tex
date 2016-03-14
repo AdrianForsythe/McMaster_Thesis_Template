@@ -56,6 +56,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99. 
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+% you'll have to play with the citation styles to resemble the standard in your field.
 
 
 %----------------------------------------------------------------------------------------
@@ -80,9 +81,12 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 	short = mtDNA,
     long = mitochondrial DNA
 }
+\usepackage{etoolbox}
+\preto\chapter{\acresetall} % resets acronyms for each chapter
 
 \usepackage{xspace} %helps spacing with custom commands. 
 \newcommand{\oddname}{{\sc SoME goOfY LonG ThiNg With an AwkWarD NAme}\xspace}
+
 
 \usepackage{pgfplotstable} % a much better way to handle tables
 % can drop in table information here, then call later, if you choose (as opposed to calling a file or typing in/copy--paste by hand). 
@@ -93,7 +97,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 
 \thesistitle{Thesis Title} % Your thesis title, print it elsewhere with \ttitle
-\supervisor{Dr. James \textsc{Smith}} % Your supervisor's name, print it elsewhere with \supname
+\supervisor{Dr. Jane \textsc{Smith}} % Your supervisor's name, print it elsewhere with \supname
 \examiner{} % Your examiner's name, print it elsewhere with \examname
 \degree{Doctor of Philosophy} % Your degree name, print it elsewhere with \degreename
 \author{John \textsc{Smith}} % Your name, print it elsewhere with \authorname
@@ -133,7 +137,6 @@ A short 60 character title % ideally, but it doesn't matter
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
-% not exactly the Grad Studies example, but much nicer. 
 \pagenumbering{gobble}
 %\begin{titlepage} % had to turn off to get page numbering right
 \begin{center}
@@ -145,7 +148,7 @@ A short 60 character title % ideally, but it doesn't matter
 By \authorname, \\%% -----> List degrees after comma  <----
 
 
-%% nicer title page
+%% nicer title page replace with other title page if wanted
 %\textsc{\LARGE \univname}\\[1.5cm] % University name
 %\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
 
@@ -167,7 +170,7 @@ By \authorname, \\%% -----> List degrees after comma  <----
 %\end{flushright}
 %\end{minipage}\\[3cm]
  \vfill
-{\large \textit{A Thesis Submitted to the School of Graduate Studies in the Partial Fulfilment of the Requirements for the Degree \degreename}}\\
+{\large \textit{A Thesis Submitted to the School of Graduate Studies in the Partial Fulfillment of the Requirements for the Degree \degreename}}\\
 %\\[0.3cm] % University requirement text
 %\textit{in the}\\[0.4cm]
 % \groupname\\
@@ -208,7 +211,7 @@ NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and numb
 %----------------------------------------------------------------------------------------
 %	Lay abstract number iii
 %----------------------------------------------------------------------------------------
-% not actually included in most theses
+% not actually included in most theses, though requested by the GSA
 % uncomment below lines if you want to include one
 %\section*{Lay Abstract}
 %\addchaptertocentry{Lay Abstract}
@@ -225,16 +228,16 @@ NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and numb
 \section*{\Huge Abstract} 
 \addchaptertocentry{Abstract}
 % Type your abstract here. 
-
+The spoils of my youth spent hunched over a bench and computer\ldots beauty, gone. But, maybe I found some stuff, so that's alright. 
 \clearpage
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 
 \begin{acknowledgements}
-\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+\addchaptertocentry{\acknowledgementname} % Add the acknowledgments to the table of contents
 
-The acknowledgements and the people to thank go here, don't forget to include your project advisor\ldots
+The acknowledgments and the people to thank go here, don't forget to include your project adviser\ldots
 
 \end{acknowledgements}
 
@@ -251,7 +254,7 @@ The acknowledgements and the people to thank go here, don't forget to include yo
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
-% many these don't use this section, as it will be declared at first use and again each chapter. Uncomment these four lines to activate
+% many theses don't use this section, as it will be declared at first use and again each chapter. Uncomment these four lines to activate
 %\clearpage
 %\section*{\Huge Acronyms}
 %\addchaptertocentry{Acronyms}

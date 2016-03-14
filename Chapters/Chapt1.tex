@@ -6,26 +6,40 @@
 \label{Introduction} %for referencing this chapter elsewhere, use \ref{Introduction}
 
 \section{Introduction}
+
+as you begin to write
+
 Here is where you can put a general introduction to your thesis. Just start typing away! You wont be able to render each of your chapters, as they are missing the preamble (the bit before the \verb+\begin{document}+). Using Overleaf makes this simple, locally (i.e. your computer) it will only be a bit more tricky. 
 
-One of my favorite features of \LaTeX is the ability to put comments in your document, that are not rendered into the PDF. I leave little notes to myself all the time. You will have noticed many of these already in the document. Anything that is prefixed with a \% sign will be ignored when creating a PDF. The \% sign is a special character in \LaTeX (there are others too), so to print it you have to ``escape it'' as such: \verb+\%+.
+One of my favorite features of \LaTeX{} is the ability to put comments in your document, that are not rendered into the PDF. I leave little notes to myself all the time. You will have noticed many of these already in the document. Anything that is prefixed with a \% sign will be ignored when creating a PDF. The \% sign is a special character in \LaTeX{} (there are others too), so to print it you have to ``escape it'' as such: \verb+\%+.
 
 Quotes too a slightly different. Use the backtick (near your escape key) for the start and an apostrophe for the end of the quote. \verb+``''+. 
 
 \section{Citations}
-When you need to cite a paper, it is simple. For a regular citation \citep{Furmanet2015}. Overleaf will even give you a drop down of possible references (at least for the first in a list and the citep and citet commands. 
+When you need to cite a paper, it is simple. For a regular citation \citep{wright1932roles}. Overleaf will even give you a drop down of possible references. For multiple citations, separate with a comma \citep{wright1932roles,haldane1922sex}. For multi-author citations, the \verb+et. al+ is automatically put in.
+
+
 
 Other citation styles are called in a similar manner.
 \begin{verbatim}
-\citep{} = (Furman et al. 2015)
-\citet{} = Furman et al. (2015)
-\citealt{} = Furman et al. 2015
-\citealp{} = Furman et al., 2015
+\citep{} = (Wright 2015)
+\citet{} = Wright (2015)
+\citealt{} = Wright 2015
+\citealp{} = Wright, 2015
 \end{verbatim}
 
-Citations themselves are held in the .bib file. The first line defines the key, which is used to call the citation in the text (such as ``Furmanet2015''). You can change the key to whatever. 
+Citations themselves are held in the .bib file. The first line defines the key, which is used to call the citation in the text (such as ``haldane1922sex''). You can change the key to whatever. There are ways to have multiple bibliographies using various packages (bib\LaTeX{}, the one used here may support it) such as multibib and bibtopic, which would allow you to do things like print bibliographies at the end of each chapter. 
 
-\clearpage % don't usually use something like this, I am just using it for demonstration purposes
+With bibtopic you would have separate .bib files and then print them within a 
+\begin{verbatim}
+\begin{btSect}{Chapt1.bib}
+	``some print command''
+\end{btSect}.
+\end{verbatim}
+
+As for the citation style at the end in the references section, I believe the GSA says go with whatever is the ``standard'' in your field. That will take a little Googleing to get right. 
+
+\clearpage % just here it for demonstration purposes, you do not need to specify page brakes
 
 One nice feature is creating short names for species, or in general defining acronyms. At the preamble of the main text, you can define acronyms. They would look something like:
 \begin{verbatim}
@@ -33,7 +47,7 @@ One nice feature is creating short names for species, or in general defining acr
 \acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
 \end{verbatim}
 
-These could allow me to write \ac{est} and \ac{Xl}, which wil pring the full name the first time, then the short form all other times. So we can call them again \ac{est} and \ac{Xl}. We can even pluralize them \acp{est}, if necessary. 
+These could allow me to write \ac{est} and \acl{Xl}, which will bring the full name the first time, then the short form all other times. So we can call them again \ac{est} and \ac{Xl}. We can even pluralize them \acp{est}, if necessary. For species names, I generally use \verb+\acl+ the first time, then \verb+\ac+ the other times. If I mention another species with the same genus name, I use \verb+\acs+ the first time (so that I do not repeat the genera name) and all other time use \verb+\ac+
 
 Another option is to define a custom command, say for a name that does not change. This is set at 
 \begin{verbatim}
@@ -45,11 +59,11 @@ Then called however you set it: \oddname.
 
 \section{Handling a supplement}
 
-You could drop supplemental sections directly in this chapter \TeX file. There are fancy ways to have it as a separate \TeX file, but that can get complicated with a book style document. 
+You could drop supplemental sections directly in this chapter \TeX{} file. There are fancy ways to have it as a separate \TeX{} file, but that can get complicated with a book style document. 
 
 Alternatively, you could put it as an Appendix at the end of your thesis. 
 
-We can then reference the Figure in the supplement (Fig.\,\ref{Another_tree}; see Chapter \ref{nextChapt} for handling figures). 
+We can then reference the Figure in the supplement (Fig.\,\ref{Another_fig}; see Chapter \ref{nextChapt} for handling figures). 
 
 
 
