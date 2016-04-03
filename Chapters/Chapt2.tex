@@ -32,9 +32,7 @@ As for my next figure, \LaTeX{} will automatically do the numbering. It will als
 
 Then I will call it same as before (Fig.\,\ref{bigFig}). As you can see, it was placed on the next page, as \LaTeX{} thought that was best, given its size. Figures will float around, but you will never have to worry about numbering. One potential problem is that the figure order may not end up the way you want it to (not that you have to worry about getting the numbers wrong). You can suggest placement with the [h] after the \verb+\begin{figure}[h]+ and strongly suggest placement with [h!]. There are ways to force a figure placement, but do try and avoid forcing things (could end up looking weird). You can force positioning by putting \verb+\usepackage{float}+ in the preamble, then setting up the figure with a [H] like so: \verb+\begin{figure}[H]+. This stop the figure from floating.
 
-You may notice the \verb+\,+ that just puts in a small space after the Fig ``period''. Personal preference, and there are too many space options in \LaTeX{}. \emph{Also, scalable vector rendered graphics (Illustrator, Inkscape, R) will not distort and do not look all pixelated!}. 
-
-Did you notice that the table of contents/list of figures was all automatically updated too\ldots\.pretty neat. (Comment out the figure, then look at the appendix, then uncomment the figure if you don't believe me). 
+You may notice the \verb+\,+ that just puts in a small space after the Fig ``period''. Personal preference, and there are too many space options in \LaTeX{}. 
 
 
 \section{Tables -- how to}
@@ -46,7 +44,7 @@ Small to medium tables I would suggest just typing it in to the \TeX{} file (see
 \centering
 \caption[Simple table]{A simple typed in table. Note the special lines used in the table. Yes, typography rules call for different thickness of lines. The command \\hline will put in just a regular horizontal line}
 \label{simpleTable}
-\begin{tabular}{c|ccc} % a verticle bar here will put one in the table
+\begin{tabular}{c|ccc} % a vertical bar here will put one in the table
 \toprule
 col1 & col2 & col3 & col4 \\
 \midrule

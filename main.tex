@@ -14,7 +14,7 @@
 % Steven Gunn  (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
 % Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
 %
-% Modified to McMaster format by Benjamin Furman (http://www.benjaminfurman.wordpress.com
+% Modified to McMaster format by Benjamin Furman (http://www.xenben.com)
 %
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
@@ -28,13 +28,12 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-english, % ngerman for German
+english, % other languages available
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
 %liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
 %toctotoc, % Uncomment to add the main table of contents to the table of contents
-%parskip, % Uncomment to add sp ace between paragraphs
 ]{McMasterThesis} % The class file specifying the document structure
 
 
@@ -44,7 +43,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage{palatino} % Use the Palatino font by default
+\usepackage{lmodern}
 \usepackage{lastpage} % count pages
 \usepackage{siunitx} % for scientific units (micro-liter, etc)
 
@@ -62,25 +61,13 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 % Collect all your header information from the chapters here, each header or the chapters should be pretty clean
 %----------------------------------------------------------------------------------------
-\usepackage{parskip} %this will put spaces between my paragraphs
+\usepackage{parskip} %this will put spaces between paragraphs
 \setlength{\parindent}{15pt} % this will create and indent on all but the first paragraph of each section. 
 
-%\usepackage{acronym}
-%\acrodef{est}[EST]{expressed sequence tag}
-%\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
-\usepackage{acro}
-\DeclareAcronym{est}{
-	short = EST,
-    long = expressed sequence tag
-}
-\DeclareAcronym{Xl}{
-	short = \textit{X.~laevis}, % ~ is unbreakable space
-    long = \textit{Xenopus laevis}
-} % can actually add all kinds of crazy commands to this
-\DeclareAcronym{mtdna}{
-	short = mtDNA,
-    long = mitochondrial DNA
-}
+\usepackage{acronym}
+\acrodef{est}[EST]{expressed sequence tags}
+\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
+
 \usepackage{etoolbox}
 \preto\chapter{\acresetall} % resets acronyms for each chapter
 
@@ -89,8 +76,15 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 
 
 \usepackage{pgfplotstable} % a much better way to handle tables
-% can drop in table information here, then call later, if you choose (as opposed to calling a file or typing in/copy--paste by hand). 
-% \usepackage{float} % if you need to demand figure/table placement, then this will allow you to use [H], which should be strong. 
+
+% \usepackage{float} % if you need to demand figure/table placement, then this will allow you to use [H], which demands a figure placement. Beware, making LaTeX do things it doesn't want may lead to oddities.  
+
+
+%%%%
+% LINK COLORS
+% You can control the link colors at the end of the McMasterThesis.cls file. There is also a true/false option there to turn off all link colors.  
+%%%%
+
 
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
@@ -110,6 +104,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \group{\href{http://researchgroup.university.com}{Research Group Name}} % Your research group's name and URL, print it elsewhere with \groupname
 \faculty{\href{http://www.science.mcmaster.ca/}{Faculty of Science}} % Your faculty's name and URL, print it elsewhere with \facname
 
+% this sets up hyperlinks
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
 \hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
@@ -127,7 +122,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %\vspace*{\fill}
 \vspace{6cm}
 \begin{center}
-A short 60 character title % ideally, but it doesn't matter
+A short 60 character title % ideally, but it doesn't seem to matter
 \end{center}
 %\vspace*{\fill}
 \pagenumbering{gobble} % leave this here, McMaster doesn't want this page numbered
@@ -138,54 +133,21 @@ A short 60 character title % ideally, but it doesn't matter
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 \pagenumbering{gobble}
-%\begin{titlepage} % had to turn off to get page numbering right
 \begin{center}
 
 \vfill
 \textsc{\Large \ttitle} \\
 
 \vfill
-By \authorname, \\%% -----> List degrees after comma  <----
+By \authorname, \\%% -----> List prior degrees after comma  <----
 
-
-%% nicer title page replace with other title page if wanted
-%\textsc{\LARGE \univname}\\[1.5cm] % University name
-%\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
-
-%\HRule \\[0.4cm] % Horizontal line
-%{\huge \bfseries \ttitle}\\[0.4cm] % original overleaf style
-%{\huge \sc \ttitle}\\[0.4cm] % Thesis title
-%\HRule \\[1.5cm] % Horizontal line
- 
-%\begin{minipage}{0.4\textwidth}
-%\begin{flushleft} \large
-%\emph{Author:}\\
-%\href{http://www.johnsmith.com}{\authorname \\ M.Sc.} % Author name - remove the \href bracket to remove the link
-%\end{flushleft}
-%\end{minipage}
-%\begin{minipage}{0.4\textwidth}
-%\begin{flushright} \large
-%\emph{Supervisor:} \\
-%\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
-%\end{flushright}
-%\end{minipage}\\[3cm]
  \vfill
 {\large \textit{A Thesis Submitted to the School of Graduate Studies in the Partial Fulfillment of the Requirements for the Degree \degreename}}\\
-%\\[0.3cm] % University requirement text
-%\textit{in the}\\[0.4cm]
-% \groupname\\
-%\deptname\\[2cm] % Research group name and department name
-
 
 \vfill
-{\large \univname\, \copyright\, Copyright by \authorname\, \today}\\[4cm] % Date: replace \today with \date{} <---input date
+{\large \univname\, \copyright\, Copyright by \authorname\, \today}\\[4cm] % replace \today with the submission date
 
-
-%\vfill
 \end{center}
-
-
-%\end{titlepage}
 
 
 %----------------------------------------------------------------------------------------
@@ -215,20 +177,16 @@ NUMBER OF PAGES: \pageref{lastoffront}, \pageref{LastPage}  % put in iv and numb
 % uncomment below lines if you want to include one
 %\section*{Lay Abstract}
 %\addchaptertocentry{Lay Abstract}
+% Type it here
 %\clearpage
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
 %----------------------------------------------------------------------------------------
 
-% These commented lines produce a much nicer looking abstract, but it not how Grad Studies wants it. Though you may be able to get away with it.
-%\begin{abstract}
-%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-%\end{abstract}
-
 \section*{\Huge Abstract} 
 \addchaptertocentry{Abstract}
 % Type your abstract here. 
-The spoils of my youth spent hunched over a bench and computer\ldots beauty, gone. But, maybe I found some stuff, so that's alright. 
+An abstract! 
 \clearpage
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
@@ -254,7 +212,7 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
 %----------------------------------------------------------------------------------------
-% many theses don't use this section, as it will be declared at first use and again each chapter. Uncomment these four lines to activate
+% many theses don't use this section, as it will be declared at first use and again each chapter. Uncomment these four lines to activate if you want
 %\clearpage
 %\section*{\Huge Acronyms}
 %\addchaptertocentry{Acronyms}
@@ -275,11 +233,6 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \item and what you have done for it
 \end{itemize}
  
-%\noindent Signed:\\
-%\rule[0.5em]{25em}{0.5pt} % This prints a line for the signature
- 
-%\noindent Date:\\
-%\rule[0.5em]{25em}{0.5pt} % This prints a line to write the date
 \end{declaration}
 
 
@@ -329,8 +282,6 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 
 % Include the chapters of the thesis as separate files from the Chapters folder
-% Uncomment the lines as you write the chapters
-
 \input{Chapters/Chapt1}      
 \input{Chapters/Chapt2} 
 
@@ -341,11 +292,8 @@ The acknowledgments and the people to thank go here, don't forget to include you
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 % Include the appendices of the thesis as separate files from the Appendices folder
-% Uncomment the lines as you write the Appendices
-
 \input{Appendix/Supp_Chap1.tex}
-%\input{Appendices/AppendixB}
-%\input{Appendices/AppendixC}
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
