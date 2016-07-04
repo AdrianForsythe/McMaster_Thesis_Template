@@ -53,7 +53,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 \usepackage[backend=biber,doi=false,url=false,eprint=false,firstinits=true,style=authoryear,natbib=true,sorting=ynt,maxbibnames=99,maxcitenames=2]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
 % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99. 
-\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 % you'll have to play with the citation styles to resemble the standard in your field.
