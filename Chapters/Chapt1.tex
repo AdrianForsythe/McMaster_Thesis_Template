@@ -34,17 +34,28 @@ With bibtopic you would have separate .bib files and then print them within a
 \end{btSect}.
 \end{verbatim}
 
-As for the citation style at the end in the references section, I believe the GSA says go with whatever is the ``standard'' in your field. That will take a little Googleing to get right. 
+As for the citation style at the end in the references section, I believe the GSA says go with whatever is the ``standard'' in your field. That will take a little Google-ing to get right. 
 
 \clearpage % just here it for demonstration purposes, you do not need to specify page brakes
 
 One nice feature is creating short names for species, and other acronyms. In the preamble of the main text, you can define these acronyms. They would look something like:
 \begin{verbatim}
-\acrodef{est}[EST]{expressed sequence tags}
-\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
+\DeclareAcronym{est}{
+	short = EST,
+	long  = expressed sequence tags
+}
+
+\DeclareAcronym{Xl}{
+	short = \textit{X.~laevis},
+	long  = \textit{Xenopus~laevis}
+}
+\DeclareAcronym{Xg}{
+	short = \textit{X.~gilli},
+	long  = \textit{Xenopus~gilli}
+}
 \end{verbatim}
 
-These could allow you to write \ac{est} and \acl{Xl}, which will bring the full name the first time, then the short form all other times. So we can call them again \ac{est} and \ac{Xl}. We can even pluralize them \acp{est}, if necessary. For species names, I generally use \verb+\aclu+ the first time, then \verb+\ac+ the other times. If I mention another species with the same genus name, I use \verb+\acsu+ the first time (so that I do not repeat the genera name) and all other time use \verb+\ac+
+These could allow you to write \ac{est} and \acl{Xl}, which will bring the full name the first time, then the short form all other times. So we can call them again \ac{est} and \ac{Xl}. We can even pluralize them \acp{est}, if necessary. For species names, I generally use \verb+\acl+ the first time, then \verb+\ac+ the other times. If I mention another species with the same genus name, such as \acs{Xg}, I use \verb+\acs+ the first time (so that I do not repeat the genera name) and all other time use \verb+\ac+. There are a lot of options, beyond ``short'' and ``long'', if you need more complicated things with you acronyms. 
 
 Another option for odd names is to define a custom command. This is set with
 \begin{verbatim}

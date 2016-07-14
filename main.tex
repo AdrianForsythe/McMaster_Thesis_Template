@@ -65,9 +65,24 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \usepackage{parskip} %this will put spaces between paragraphs
 \setlength{\parindent}{15pt} % this will create and indent on all but the first paragraph of each section. 
 
-\usepackage{acronym}
-\acrodef{est}[EST]{expressed sequence tags}
-\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
+%\usepackage[printonlyused]{acronym}
+%\acrodef{est}[EST]{expressed sequence tags}
+%\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
+
+\usepackage{acro}
+\DeclareAcronym{est}{
+	short = EST,
+	long  = expressed sequence tags
+}
+
+\DeclareAcronym{Xl}{
+	short = \textit{X.~laevis},
+	long  = \textit{Xenopus~laevis}
+}
+\DeclareAcronym{Xg}{
+	short = \textit{X.~gilli},
+	long  = \textit{Xenopus~gilli}
+}
 
 \usepackage{etoolbox}
 \preto\chapter{\acresetall} % resets acronyms for each chapter
@@ -218,7 +233,6 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %\section*{\Huge Acronyms}
 %\addchaptertocentry{Acronyms}
 %\printacronyms[name] % name without an option stops the header
-
 
 %----------------------------------------------------------------------------------------
 %	DECLARATION PAGE
