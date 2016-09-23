@@ -30,9 +30,9 @@ As for my next figure, \LaTeX{} will automatically do the numbering. It will als
     \label{bigFig}
 \end{figure}
 
-Then I will call it same as before (Fig.\,\ref{bigFig}). As you can see, it was placed on the next page, as \LaTeX{} thought that was best, given its size. Figures will float around, but you will never have to worry about numbering. One potential problem is that the figure order may not end up the way you want it to (not that you have to worry about getting the numbers wrong). You can suggest placement with the [h] after the \verb+\begin{figure}[h]+ and strongly suggest placement with [h!]. There are ways to force a figure placement, but do try and avoid forcing things (could end up looking weird). You can force positioning by putting \verb+\usepackage{float}+ in the preamble, then setting up the figure with a [H] like so: \verb+\begin{figure}[H]+. This stop the figure from floating.
+Then I will call it same as before (Fig.\,\ref{bigFig}). As you can see, it was placed on the next page, as \LaTeX{} thought that was best, given its size. Figures will float around, but you will never have to worry about numbering. One potential problem is that the figure placement may not end up the were want it to (not that you have to worry about getting the numbers wrong). You can suggest placement with the [h] after the \verb+\begin{figure}[h]+ and strongly suggest placement with [h!]. There are ways to force a figure placement, but do try and avoid forcing things (could end up looking weird). You can force positioning by putting \verb+\usepackage{float}+ in the preamble, then setting up the figure with a [H] like so: \verb+\begin{figure}[H]+. This stop the figure from floating.
 
-You may notice the \verb+\,+ that just puts in a small space after the Fig ``period''. Personal preference, and there are too many space options in \LaTeX{}. 
+You may notice the \verb+\,+ that just puts in a small space after the Fig ``period''. It's personal preference, and there are too many space options in \LaTeX{}. 
 
 
 \section{Tables -- how to}
@@ -80,7 +80,7 @@ If tables do not fit, you can shrink them by wrapping in a box or shrinking text
 \pgfplotstabletypesetfile[col sep=comma,every last row/.style={after row=\bottomrule},every head row/.style={before row={\toprule}, after row={\midrule}}]{Tables/Suppl_Table_1.csv}
 \end{table}
 
-And it is just as easy to rotate tables, and only a little bit difficult to do multi-page rotated tables, any what ever else you want, but packages exist to handle it. 
+And it is just as easy to rotate tables, and only a little bit difficult to do multi-page rotated tables, and whatever else you want, but packages exist to handle it. 
 
 \clearpage % again, this is here just for demonstration, if you remove it, you'll see that LaTeX decides that the best place for the tables is after the next section. This behavior can be corrected though. 
 

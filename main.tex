@@ -45,7 +45,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-\usepackage{lmodern}
+\usepackage{lmodern} % could change font type by calling a different package
 \usepackage{lastpage} % count pages
 \usepackage{siunitx} % for scientific units (micro-liter, etc)
 
@@ -58,18 +58,14 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography, which happens with the ynt 
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-% you'll have to play with the citation styles to resemble the standard in your field.
+% you'll have to play with the citation styles to resemble the standard in your field, or just leave them as is here. 
 
 
 %----------------------------------------------------------------------------------------
-% Collect all your header information from the chapters here, each header or the chapters should be pretty clean
+% Collect all your header information from the chapters here, things like acronyms, custom commands, necessary packages, etc. 
 %----------------------------------------------------------------------------------------
 \usepackage{parskip} %this will put spaces between paragraphs
 \setlength{\parindent}{15pt} % this will create and indent on all but the first paragraph of each section. 
-
-%\usepackage[printonlyused]{acronym}
-%\acrodef{est}[EST]{expressed sequence tags}
-%\acrodef{Xl}[\textit{X.\,laevis}]{\textit{Xenopus laevis}}
 
 \usepackage{acro}
 \DeclareAcronym{est}{
@@ -94,7 +90,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 
 
 \usepackage{pgfplotstable} % a much better way to handle tables
-
+\pgfplotsset{compat=1.12}
 % \usepackage{float} % if you need to demand figure/table placement, then this will allow you to use [H], which demands a figure placement. Beware, making LaTeX do things it doesn't want may lead to oddities.  
 
 
