@@ -54,10 +54,21 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 % Handling Citations
 %----------------------------------------------------------------------------------------
 \usepackage[backend=biber,doi=false,url=false,eprint=false,firstinits=true,style=authoryear,natbib=true,sorting=ynt,maxbibnames=99,maxcitenames=2]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
-% can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99. 
+% can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99.
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\isdot} % removes quotes around title
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+%  \setunit*{\adddot}% DELETED
+  \printfield{number}%
+  \setunit{\space}%
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+%\renewcommand*{\newunitpunct}{\space} % remove period after date, but I like it. 
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography, which happens with the ynt 
+\DeclareNameAlias{sortname}{last-first}
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
 % you'll have to play with the citation styles to resemble the standard in your field, or just leave them as is here. 
 
 
