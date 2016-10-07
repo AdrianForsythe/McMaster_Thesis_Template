@@ -65,12 +65,21 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 %\renewcommand*{\newunitpunct}{\space} % remove period after date, but I like it. 
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography, which happens with the ynt 
+\renewbibmacro*{note+pages}{%
+    \printfield{note}%
+    \setunit{\space}% could add punctuation here for after volume
+    \printfield{pages}%
+    \newunit}    
+\DefineBibliographyStrings{english}{% clears the pp from pages
+  page = {\ifbibliography{}{\adddot}},
+  pages = {\ifbibliography{}{\adddot}},
+} 
 \DeclareNameAlias{sortname}{last-first}
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 % you'll have to play with the citation styles to resemble the standard in your field, or just leave them as is here. 
-
+% or, if there is a bst file you like, just get rid of all this biblatex stuff and go back to bibtex. 
 
 %----------------------------------------------------------------------------------------
 % Collect all your header information from the chapters here, things like acronyms, custom commands, necessary packages, etc. 
