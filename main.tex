@@ -67,7 +67,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 \renewbibmacro{in:}{\ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}} % this remove the "In: Journal Name" from articles in the bibliography, which happens with the ynt 
 \renewbibmacro*{note+pages}{%
     \printfield{note}%
-    \setunit{\space}% could add punctuation here for after volume
+    \setunit{,\space}% could add punctuation here for after volume
     \printfield{pages}%
     \newunit}    
 \DefineBibliographyStrings{english}{% clears the pp from pages
