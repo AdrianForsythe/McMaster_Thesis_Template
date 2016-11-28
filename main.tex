@@ -75,6 +75,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
   pages = {\ifbibliography{}{\adddot}},
 } 
 \DeclareNameAlias{sortname}{last-first}
+\renewcommand*{\nameyeardelim}{\addspace} % remove comma in text between name and date
 \addbibresource{Bibliography.bib} % The filename of the bibliography
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
