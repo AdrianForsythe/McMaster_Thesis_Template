@@ -53,7 +53,8 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 % Handling Citations
 %----------------------------------------------------------------------------------------
-\usepackage[backend=biber,doi=false,url=false,eprint=false,firstinits=true,style=authoryear,natbib=true,sorting=ynt,maxbibnames=99,maxcitenames=2]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+%%% Bibliography basic design % giveninits=true, % , url=false, eprint=false, style=authoryear, sorting=nyt, maxbibnames=99, maxcitenames=2
+\usepackage[backend=biber, giveninits=true, doi=false, natbib=true, url=false, eprint=false, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, uniquename=false, uniquelist=false]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
 % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99.
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\isdot} % removes quotes around title
 \renewbibmacro*{volume+number+eid}{%

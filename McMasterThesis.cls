@@ -140,11 +140,11 @@
 \usepackage{siunitx} % Required for \SI commands
 
 \usepackage{graphicx} % Required to include images
-\graphicspath{{Figures/}{./}} % Specifies where to look for included images
+\graphicspath{{Figs/}{./}} % Specifies where to look for included images
 
 \usepackage{booktabs} % Required for better table rules
 
-\RequirePackage[centerlast,small,sc]{caption} % Required for customising the captions
+\RequirePackage[small,sc]{caption} % Required for customising the captions
 \setlength{\captionmargin}{50pt}
 
 %----------------------------------------------------------------------------------------
