@@ -86,7 +86,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 \usepackage{parskip} %this will put spaces between paragraphs
 \setlength{\parindent}{15pt} % this will create and indent on all but the first paragraph of each section. 
-
+% should maybe change to glossaries package
 \usepackage{acro}
 \DeclareAcronym{est}{
 	short = EST,
@@ -323,12 +323,12 @@ The acknowledgments and the people to thank go here, don't forget to include you
 %----------------------------------------------------------------------------------------
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
-
-% Include the appendices of the thesis as separate files from the Appendices folder
-\input{Appendix/Supp_Chap1.tex}
 \renewcommand{\thetable}{A\arabic{chapter}.\arabic{table}} % adds an A to table names in appendix (Table A1.1, A1.2...)
 \renewcommand{\thefigure}{A\arabic{chapter}.\arabic{figure}} % same for figures
 \renewcommand{\thesection}{A\arabic{section}}
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+\input{Appendix/Supp_Chap1.tex}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
