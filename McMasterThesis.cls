@@ -226,7 +226,7 @@
 %% Default Header
 %\renewcommand{\chaptermark}[1]{\tttypeout{\thechapter.\space #1}\markboth{\@chapapp\ \thechapter.\ #1}{\@chapapp\ \thechapter.\ #1}} % Define what is in the header and in what order
 %% McMaster Header
-\renewcommand{\chaptermark}[1]{\tttypeout{\degreename -- \authorname; \univname -- \subjectname}\markboth{\degreename -- \authorname; \univname -- \subjectname}{\degreename -- \authorname; \univname -- \subjectname}} % Define what is in the header and in what order
+\renewcommand{\chaptermark}[1]{\tttypeout{\degreename -- \authorname; \univname -- \deptname}\markboth{\degreename -- \authorname; \univname -- \deptname}{\degreename -- \authorname; \univname -- \deptname}} % Define what is in the header and in what order
 
 
 \renewcommand{\sectionmark}[1]{}
