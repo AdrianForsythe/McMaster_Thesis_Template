@@ -209,14 +209,14 @@
 \if@twoside % If we are in two sided mode, print alternating page headers
 \fancypagestyle{thesis}{%
 	%\fancyhead[LE,RO]{\rmfamily\thepage} %commented out to remove page number in header
-	%\fancyhead[RE,LO]{\slshape\MakeMarkcase{\rightmark}}%
-    \fancyhead[C]{\slshape\MakeMarkcase{\rightmark}}%
+	%\fancyhead[RE,LO]{\slshape\MakeMarkcase{\rightmark}}% \cfoot{\makebox[\textwidth][c]{something centered in footer}}
+    \fancyhead[C]{\slshape\MakeMarkcase{\rightmark}}% 
     \fancyfoot[C]{\thepage} % center the page number
 }
 \else % If we are in one sided, print the headers on the same positions on all pages  
 	\fancypagestyle{thesis}{%
-	\lhead{\slshape\MakeMarkcase{\rightmark}}% The left top header
-    %\fancyhead[C]{\slshape\MakeMarkcase{\rightmark}} % uncomment to center align header
+	%\lhead{\slshape\MakeMarkcase{\rightmark}}% The left top header
+    \fancyhead[C]{\slshape\MakeMarkcase{\rightmark}} % uncomment to center align header
 %	\rhead{\rmfamily\thepage}% The right top header
     \fancyfoot[C]{\thepage}
 }

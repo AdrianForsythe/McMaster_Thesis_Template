@@ -9,21 +9,20 @@ Just for fun, you can see that acronyms are now redefined: \ac{est}.
 
 Figures are dead easy to call. Just call them from within a Figure environment.
 
-\begin{figure}[h] % put figure roughly here, will float though
+\begin{figure}[ht] % put figure roughly here, will float though
 	\centering
-	\includegraphics[scale=0.4]{Figs/Wright_1932_1.pdf}
+	\includegraphics[width=0.5\textwidth]{Figs/Wright_1932_1.pdf}
     \caption[Adaptive landscape]{Early adaptive landscape sort of stuff}
     \label{landscape}
 \end{figure}
 
-And now, I do not need to remember the figure number. All I do is refer to the figure label that I gave it (Fig.\,\ref{landscape}).
-
+And now, I do not need to remember the figure number. All I do is refer to the figure label that I gave it (Fig.\,\ref{landscape}). The size of figures can be controlled in the \verb+\includegraphics[]{}+ command. Above, I chose to make the figure 50\% of the width of the text on a page. I could alternatively put a specific dimension with \verb+width=85mm+ or even scale it to a some percentage of it's original size \verb+scale=0.5+ (in this case 50\% of its original size).  
 
 As for my next figure, \LaTeX{} will automatically do the numbering. It will also attach the chapter number to the figure.
 
 
 
-\begin{figure}[h!] % put figure roughly here, will float though, h! will strongly suggest where to put it.
+\begin{figure}[t] 
 	\centering
 	\includegraphics[scale=0.5, angle=-90]{Figs/Wright_1932_2.pdf}
     \caption[selection]{Wowza, glad I don't have to do figures by hand. Also, you may have noticed in the includegraphics command I rotated the image. If it was a multipage pdf you could also call specific pages}
@@ -73,11 +72,13 @@ Using \verb+\usepackage{pgfplotstable}+ is the package to use.
 If tables do not fit, you can shrink them by wrapping in a box or shrinking text (Table \ref{csv_readin_small}).
 
 \begin{table}[h]
-\tiny % add text size command 
+% \tiny % add text size command 
 \centering
 \caption[Tiny table]{Reading in a table smaller}
 \label{csv_readin_small}
+\resizebox{0.1\textwidth}{!}{ % command is \resizebox{width, which here is 10% of the text width}{height, width ! meaning to just leave it as is}{table}
 \pgfplotstabletypesetfile[col sep=comma,every last row/.style={after row=\bottomrule},every head row/.style={before row={\toprule}, after row={\midrule}}]{Tables/Suppl_Table_1.csv}
+} % end resize box
 \end{table}
 
 And it is just as easy to rotate tables, and only a little bit difficult to do multi-page rotated tables, and whatever else you want, but packages exist to handle it. 

@@ -53,7 +53,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 %----------------------------------------------------------------------------------------
 % Handling Citations
 %----------------------------------------------------------------------------------------
-\usepackage[backend=biber, giveninits=true, doi=false, natbib=true, url=false, eprint=false, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, uniquename=false, uniquelist=false, dashed=false]{biblatex} % User the bibtex backend with the % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99.
+\usepackage[backend=biber, giveninits=true, doi=false, natbib=true, url=false, eprint=false, style=authoryear, sorting=nyt, maxcitenames=2, maxbibnames=99, uniquename=false, uniquelist=false, dashed=false]{biblatex} % can change the maxbibnames to cut long author lists to specified length followed by et al., currently set to 99.
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\isdot} % removes quotes around title
 \renewbibmacro*{volume+number+eid}{%
   \printfield{volume}%
@@ -111,6 +111,7 @@ singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespac
 
 \usepackage{pgfplotstable} % a much better way to handle tables
 \pgfplotsset{compat=1.12}
+
 % \usepackage{float} % if you need to demand figure/table placement, then this will allow you to use [H], which demands a figure placement. Beware, making LaTeX do things it doesn't want may lead to oddities.  
 
 
@@ -317,6 +318,8 @@ The acknowledgments and the people to thank go here, don't forget to include you
 % Include the chapters of the thesis as separate files from the Chapters folder
 \input{Chapters/Chapt1}      
 \input{Chapters/Chapt2} 
+
+% I suggest only compiling one chapter at a time, and comment out the others. That way, the document will typeset faster. When your done with all the chapters, then uncomment them all. Don't worry about the numbering of chapters/figures/etc. LaTeX will take care of that. 
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
