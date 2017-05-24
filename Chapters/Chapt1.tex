@@ -25,7 +25,7 @@ Other citation styles are called in a similar manner.
 \citealp{} = Wright, 2015
 \end{verbatim}
 
-Citations themselves are held in the .bib file. The first line defines the key, which is used to call the citation in the text (such as ``haldane1922sex''). You can change the key to whatever. There are ways to have multiple bibliographies using various packages (bib\LaTeX{}, the one used here may support it) such as multibib and bibtopic, which would allow you to do things like print bibliographies at the end of each chapter. 
+Citations themselves are held in the .bib file. The first line defines the key, which is used to call the citation in the text (such as ``haldane1922sex''). You can change the key to whatever. Though there is not likely to be a reason for it, there are ways to have multiple bibliographies. Various packages, such as multibib and bibtopic, would allow you to do things like print bibliographies at the end of each chapter. 
 
 With bibtopic you would have separate .bib files and then print them within a 
 \begin{verbatim}
@@ -67,11 +67,7 @@ Then called however you defined it: \oddname.
 
 \section{Handling a supplement}
 
-You could drop supplemental sections directly in this chapter \TeX{} file. There are fancy ways to have it as a separate \TeX{} file, but that can get complicated with a book style document. 
-
-Alternatively, you could put it as an Appendix at the end of your thesis. 
-
-We can then reference the Figure in the supplement (Fig.\,\ref{Another_fig}; see Chapter \ref{nextChapt} for handling figures). 
+Probably best to have chapter supplements as appendices at the end of the thesis. In the main.tex file, you will see a section called \verb+\appendix+. Below that, when you call a chapter.tex file, it will treat it as an appendix and reference the section accordingly (A.1, A.2, B.1, B.2, etc.). As an example, we can reference the Figure in the supplement (Fig.\,\ref{Another_fig}; see Chapter \ref{nextChapt} for handling figures). 
 
 
 
